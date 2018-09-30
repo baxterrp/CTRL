@@ -21,7 +21,7 @@ namespace CTRL.Web.Controllers
         public string TestLogin(LoginContract contract)
         {
             var user = repository.GetUser(contract);
-            return user.IsActive ? "Logged In" : "Login Failed";
+            return user.IsActive ? "Success" : "Login Failed. Try Again.";
         }
 
         public ActionResult About()
