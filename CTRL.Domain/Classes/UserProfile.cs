@@ -1,4 +1,4 @@
-﻿using CTRL.Login.Classes;
+﻿using CTRL.Login.Enumerations;
 using System.Collections.Generic;
 
 namespace CTRL.Domain.Classes

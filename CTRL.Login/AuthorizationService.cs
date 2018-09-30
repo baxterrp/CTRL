@@ -1,6 +1,6 @@
 ﻿using CTRL.Domain.Classes;
 using CTRL.Domain.Interfaces;
-using CTRL.Login.Classes;
+using CTRL.Login.Enumerations;
 using CTRL.Login.Interfaces;
 using System.Collections.Generic;
 

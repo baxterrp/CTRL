@@ -1,4 +1,5 @@
 ﻿using CTRL.Domain.Classes;
+using CTRL.Domain.Classes.Contracts;
 
 namespace CTRL.Login.Interfaces
 {

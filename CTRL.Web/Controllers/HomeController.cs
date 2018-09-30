@@ -1,5 +1,4 @@
-﻿using CTRL.Domain.Classes;
-using CTRL.Domain.Interfaces;
+﻿using CTRL.Domain.Classes.Contracts;
 using CTRL.Login.Interfaces;
 using System.Web.Mvc;
 

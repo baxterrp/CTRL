@@ -1,4 +1,4 @@
-﻿namespace CTRL.Domain.Classes
+﻿namespace CTRL.Domain.Classes.Contracts
 {
     public class LoginContract
     {

@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Address.cs" />
+    <Compile Include="Classes\Name.cs" />
     <Compile Include="Database\DatabaseConnection.cs" />
     <Compile Include="Database\Repository.cs" />
     <Compile Include="Enums\State.cs" />
