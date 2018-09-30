@@ -9,19 +9,30 @@ namespace CTRL.Login
     {
         ILoginRepository loginRepository;
         IAuthorizationService authorizationService;
+        IPasswordEncryption passwordEncryption;
 
-        public LoginService(ILoginRepository loginRepository, IAuthorizationService authorizationService)
+        public LoginService(ILoginRepository loginRepository, IAuthorizationService authorizationService, IPasswordEncryption passwordEncryption)
         {
             this.loginRepository = loginRepository;
             this.authorizationService = authorizationService;
+            this.passwordEncryption = passwordEncryption;
         }
 
         public UserProfile GetUser(LoginContract contract)
         {
             var user = loginRepository.GetUser(contract);
-            if (user.IsActive)
+            if(passwordEncryption.CheckPassword(contract.Password, user.Password))
             {
-                user.Permissions = authorizationService.GetUserPermissions(user);
+                if (user.IsActive)
+                {
+                    user.Permissions = authorizationService.GetUserPermissions(user);
+                }
+            }
+            else
+            {
+                user.LoginName = "Login Failed";
+                user.Password = string.Empty;
+                user.UserIdentifier = 0;
             }
 
             return user;

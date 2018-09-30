@@ -74,6 +74,7 @@ namespace CTRL.Web.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             var connectionString = GetConnectionString();
+            kernel.Bind<IPasswordEncryption>().To<PasswordEncryption>().InSingletonScope();
             kernel.Bind<ILoginService>().To<LoginService>().InSingletonScope();
             kernel.Bind<IDatabaseConnection>().To<DatabaseConnection>().InSingletonScope().WithConstructorArgument("connectionString", connectionString);
             kernel.Bind<IRepository>().To<Repository>().InSingletonScope();

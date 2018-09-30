@@ -9,6 +9,8 @@ namespace CTRL.Domain.Classes
 
         public string LoginName { get; set; }
 
+        public string Password { get; set; }
+
         public IEnumerable<Permission> Permissions { get; set; }
 
         public bool IsActive {
