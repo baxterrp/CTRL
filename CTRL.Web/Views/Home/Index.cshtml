@@ -2,13 +2,24 @@
     ViewBag.Title = "Home Page";
 }
 
-CTRL Test Login
+<img src="~/Views/Images/ctrl_logo.png" alt="">
 
-<form id="login-form">
-    <input type="text" id="email" />
-    <input type="text" id="password" />
-    <button class='btn btn-primary' id="submit">Submit</button>
-</form>
+<div class="container">
+    <div class="row justify-content-center align-items-end">
+        <form class="col-8 col-md-6 col-lg-5" id="login-form">
+            <div class='form-group'>
+                <input type='email' placeholder='johndoe@domain.com' class='form-control form-control-lg rounded-0 shadow col-12' id='email'>
+            </div>
+            <div class='form-group'>
+                <input type='password' placeholder='********' class='form-control form-control-lg rounded-0 shadow col-12' id='password'>
+            </div>
+            <div class='form-group'>
+                <button type='submit' id='submit' class='btn btn-block btn-secondary btn-lg text-white rounded-0'>Login</button>
+            </div>
+        </form>
+        <a class='text-center align-self-start col-12' href=''><p>Forgot password?</p></a>
+    </div>
+</div>
 <div id="response"></div>
 <script>
     $("#submit").on("click", function (event) {
@@ -16,7 +27,7 @@ CTRL Test Login
 
         var email = $("#email").val();
         var pass = $("#password").val();
-        
+
         if (email != "" && pass != "") {
             $.ajax({
                 url: '@Url.Action("TestLogin", "Home")',
