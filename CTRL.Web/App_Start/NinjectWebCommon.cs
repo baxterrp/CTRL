@@ -81,6 +81,8 @@ namespace CTRL.Web.App_Start
             kernel.Bind<ILoginRepository>().To<LoginRepository>().InSingletonScope();
             kernel.Bind<IAuthorizationRepository>().To<AuthorizationRepository>().InSingletonScope();
             kernel.Bind<IAuthorizationService>().To<AuthorizationService>().InSingletonScope();
+            kernel.Bind<IRegistrationRepository>().To<RegistrationRepository>().InSingletonScope();
+            kernel.Bind<IRegistrationService>().To<RegistrationService>().InSingletonScope();
         }        
     }
 }

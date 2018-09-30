@@ -32,13 +32,21 @@ namespace CTRL.Login
             }
             else
             {
-                user.LoginName = "Login Failed";
-                user.Password = string.Empty;
-                user.UserIdentifier = 0;
-                user.Permissions = new List<Permission>();
+                return ResetUser();
             }
 
             return user;
+        }
+
+        private UserProfile ResetUser()
+        {
+            return new UserProfile()
+            {
+                LoginName = "Login Failed",
+                Password = string.Empty,
+                UserIdentifier = (int)decimal.Zero,
+                Permissions = new List<Permission>()
+            };
         }
     }
 }

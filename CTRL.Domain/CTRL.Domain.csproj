@@ -49,9 +49,11 @@
     <Compile Include="Constants\DomainStoredProcedures.cs" />
     <Compile Include="Interfaces\IAuthorizationRepository.cs" />
     <Compile Include="Interfaces\ILoginRepository.cs" />
+    <Compile Include="Interfaces\IRegistrationRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AuthorizationRepository.cs" />
     <Compile Include="Repositories\LoginRepository.cs" />
+    <Compile Include="Repositories\RegistrationRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CTRL.Core\CTRL.Core.csproj">

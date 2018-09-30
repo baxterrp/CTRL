@@ -1,9 +1,11 @@
-﻿namespace CTRL.Login.Interfaces
+﻿using CTRL.Domain.Classes.Contracts;
+
+namespace CTRL.Login.Interfaces
 {
     public interface IRegistrationService
     {
-        void RegisterBusinessEntity();
+        void RegisterBusinessEntity(BusinessEntityRegistrationContract contract);
 
-        void RegisterNewUser();
+        void RegisterNewUser(UserRegistrationContract contract);
     }
 }

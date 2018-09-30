@@ -7,10 +7,12 @@ namespace CTRL.Web.Controllers
     public class HomeController : Controller
     {
         ILoginService loginService;
+        IRegistrationService registrationService;
 
-        public HomeController(ILoginService loginService)
+        public HomeController(ILoginService loginService, IRegistrationService registrationService)
         {
             this.loginService = loginService;
+            this.registrationService = registrationService;
         }
 
         public ActionResult Index()
@@ -36,6 +38,17 @@ namespace CTRL.Web.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult Registration()
+        {
+            return View();
+        }
+
+        public string TestRegistration(BusinessEntityRegistrationContract contract)
+        {
+            registrationService.RegisterBusinessEntity(contract);
+            return "got here";
         }
     }
 }
