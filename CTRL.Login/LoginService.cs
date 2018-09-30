@@ -1,7 +1,9 @@
 ﻿using CTRL.Domain.Classes;
 using CTRL.Domain.Classes.Contracts;
 using CTRL.Domain.Interfaces;
+using CTRL.Login.Enumerations;
 using CTRL.Login.Interfaces;
+using System.Collections.Generic;
 
 namespace CTRL.Login
 {
@@ -33,6 +35,7 @@ namespace CTRL.Login
                 user.LoginName = "Login Failed";
                 user.Password = string.Empty;
                 user.UserIdentifier = 0;
+                user.Permissions = new List<Permission>();
             }
 
             return user;
