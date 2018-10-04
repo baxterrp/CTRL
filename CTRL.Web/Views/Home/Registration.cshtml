@@ -17,6 +17,12 @@
     <input type="text" id="state" />   
     <label>Zip</label>
     <input type="text" id="zip" />
+    <label>Phone</label>
+    <input type="text" id="phone" />
+    <label>Contact First Name</label>
+    <input type="text" id="firstName" />
+    <label>Contact Last Name</label>
+    <input type="text" id="lastName" />
     <label>Business Type 2 - vendor : 1 - buyer</label>
     <input type="text" id="entity" />
     <label>email</label>
@@ -40,6 +46,9 @@
         var zip = $("#zip").val();
         var entity = $("#entity").val();
         var password = $("#password").val();
+        var phone = $("#phone").val();
+        var firstName = $("#firstName").val();
+        var lastName = $("#lastName").val();
         var contract = {
             CompanyName: name,
             CompanyAddress: {
@@ -51,7 +60,12 @@
             },
             MainContact: {
                 Email: email,
-                Password: password
+                Password: password,
+                Name: {
+                    FirstName: firstName,
+                    LastName: lastName
+                },
+                PhoneNumber: phone
             },
             BusinessEntity: entity
         };

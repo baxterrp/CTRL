@@ -20,6 +20,7 @@ namespace CTRL.Domain.Repositories
         public void RegisterBusinessEntity(BusinessEntityRegistrationContract contract)
         {
             var contactId = RegisterNewUser(contract.MainContact);
+            RegisterNewContact(contactId, contract.MainContact);
             var addressId = RegisterNewAddress(contract.CompanyAddress);
 
             DynamicParameters parameters = new DynamicParameters();
@@ -33,11 +34,23 @@ namespace CTRL.Domain.Repositories
 
         public int RegisterNewUser(UserRegistrationContract contract)
         {
+
             DynamicParameters parameters = new DynamicParameters();
             parameters.Add("@email", contract.Email);
             parameters.Add("@password", contract.Password);
 
             return repository.ExecuteStoredProcedureQuery<int>(DomainStoredProcedures.RegisterNewUser, parameters).First();
+        }
+
+        public void RegisterNewContact(int userId, UserRegistrationContract contract)
+        {
+            DynamicParameters parameters = new DynamicParameters();
+            parameters.Add("@user_id", userId);
+            parameters.Add("@first_name", contract.Name.FirstName);
+            parameters.Add("@last_name", contract.Name.LastName);
+            parameters.Add("@phone_number", contract.PhoneNumber);
+
+            repository.ExecuteStoredProcedureCommand(DomainStoredProcedures.RegisterNewContact, parameters);
         }
 
         private int RegisterNewAddress(Address address)

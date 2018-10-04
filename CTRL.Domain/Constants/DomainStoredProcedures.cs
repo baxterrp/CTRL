@@ -11,5 +11,7 @@
         public const string RegisterNewUser = "register_new_user";
 
         public const string RegisterNewBusiness = "RegisterNewBusiness";
+
+        public const string RegisterNewContact = "register_new_contact";
     }
 }
