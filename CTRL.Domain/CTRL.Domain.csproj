@@ -40,15 +40,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\LoginContract.cs" />
-    <Compile Include="Classes\Permission.cs" />
+    <Compile Include="Classes\Contracts\BusinessEntityRegistrationContract.cs" />
+    <Compile Include="Classes\Contracts\LoginContract.cs" />
+    <Compile Include="Classes\Contracts\UserRegistrationContract.cs" />
+    <Compile Include="Enumerations\BusinessEntity.cs" />
+    <Compile Include="Enumerations\Permission.cs" />
     <Compile Include="Classes\UserProfile.cs" />
     <Compile Include="Constants\DomainStoredProcedures.cs" />
     <Compile Include="Interfaces\IAuthorizationRepository.cs" />
     <Compile Include="Interfaces\ILoginRepository.cs" />
+    <Compile Include="Interfaces\IRegistrationRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AuthorizationRepository.cs" />
     <Compile Include="Repositories\LoginRepository.cs" />
+    <Compile Include="Repositories\RegistrationRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CTRL.Core\CTRL.Core.csproj">

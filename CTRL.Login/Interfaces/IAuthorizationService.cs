@@ -1,5 +1,5 @@
 ﻿using CTRL.Domain.Classes;
-using CTRL.Login.Classes;
+using CTRL.Login.Enumerations;
 using System.Collections.Generic;
 
 namespace CTRL.Login.Interfaces

@@ -1,4 +1,4 @@
-﻿namespace CTRL.Login.Classes
+﻿namespace CTRL.Login.Enumerations
 {
     public enum Permission
     {

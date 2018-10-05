@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using CTRL.Core.Interfaces;
+﻿using CTRL.Core.Interfaces;
 using CTRL.Domain.Classes;
 using CTRL.Domain.Constants;
 using CTRL.Domain.Interfaces;
-using CTRL.Login.Classes;
+using CTRL.Login.Enumerations;
 using Dapper;
+using System.Collections.Generic;
 
 namespace CTRL.Domain.Repositories
 {

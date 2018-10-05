@@ -74,12 +74,15 @@ namespace CTRL.Web.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             var connectionString = GetConnectionString();
+            kernel.Bind<IPasswordEncryption>().To<PasswordEncryption>().InSingletonScope();
             kernel.Bind<ILoginService>().To<LoginService>().InSingletonScope();
             kernel.Bind<IDatabaseConnection>().To<DatabaseConnection>().InSingletonScope().WithConstructorArgument("connectionString", connectionString);
             kernel.Bind<IRepository>().To<Repository>().InSingletonScope();
             kernel.Bind<ILoginRepository>().To<LoginRepository>().InSingletonScope();
             kernel.Bind<IAuthorizationRepository>().To<AuthorizationRepository>().InSingletonScope();
             kernel.Bind<IAuthorizationService>().To<AuthorizationService>().InSingletonScope();
+            kernel.Bind<IRegistrationRepository>().To<RegistrationRepository>().InSingletonScope();
+            kernel.Bind<IRegistrationService>().To<RegistrationService>().InSingletonScope();
         }        
     }
 }

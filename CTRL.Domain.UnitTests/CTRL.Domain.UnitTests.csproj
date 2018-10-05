@@ -55,6 +55,10 @@
       <Project>{980A289C-BB07-4B74-A5DF-D87DBAF193C5}</Project>
       <Name>CTRL.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CTRL.Login\CTRL.UserServices.csproj">
+      <Project>{889B34CC-75CD-4D30-9365-FC4E96A7D886}</Project>
+      <Name>CTRL.UserServices</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CTRL.Web\CTRL.Web.csproj">
       <Project>{F20E7E69-372C-4AD6-A106-05C306057E8D}</Project>
       <Name>CTRL.Web</Name>

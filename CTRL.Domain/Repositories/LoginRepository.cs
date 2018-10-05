@@ -1,9 +1,9 @@
 ﻿using CTRL.Core.Interfaces;
 using CTRL.Domain.Classes;
+using CTRL.Domain.Classes.Contracts;
 using CTRL.Domain.Constants;
 using CTRL.Domain.Interfaces;
 using Dapper;
-using System.Data;
 using System.Linq;
 
 namespace CTRL.Domain.Repositories
