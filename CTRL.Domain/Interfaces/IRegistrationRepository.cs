@@ -6,6 +6,6 @@ namespace CTRL.Domain.Interfaces
     {
         void RegisterBusinessEntity(BusinessEntityRegistrationContract contract);
 
-        int RegisterNewUser(UserRegistrationContract contract);
+        void RegisterUserAndContact(UserRegistrationContract contract);
     }
 }

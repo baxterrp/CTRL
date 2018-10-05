@@ -17,6 +17,12 @@ namespace CTRL.Domain.Repositories
             this.repository = repository;
         }
 
+        public void RegisterUserAndContact(UserRegistrationContract contract)
+        {
+            var contactId = RegisterNewUser(contract);
+            RegisterNewContact(contactId, contract);
+        }
+
         public void RegisterBusinessEntity(BusinessEntityRegistrationContract contract)
         {
             var contactId = RegisterNewUser(contract.MainContact);
@@ -32,17 +38,7 @@ namespace CTRL.Domain.Repositories
             repository.ExecuteStoredProcedureCommand(DomainStoredProcedures.RegisterNewBusiness, parameters);
         }
 
-        public int RegisterNewUser(UserRegistrationContract contract)
-        {
-
-            DynamicParameters parameters = new DynamicParameters();
-            parameters.Add("@email", contract.Email);
-            parameters.Add("@password", contract.Password);
-
-            return repository.ExecuteStoredProcedureQuery<int>(DomainStoredProcedures.RegisterNewUser, parameters).First();
-        }
-
-        public void RegisterNewContact(int userId, UserRegistrationContract contract)
+        private void RegisterNewContact(int userId, UserRegistrationContract contract)
         {
             DynamicParameters parameters = new DynamicParameters();
             parameters.Add("@user_id", userId);
@@ -51,6 +47,16 @@ namespace CTRL.Domain.Repositories
             parameters.Add("@phone_number", contract.PhoneNumber);
 
             repository.ExecuteStoredProcedureCommand(DomainStoredProcedures.RegisterNewContact, parameters);
+        }
+
+        private int RegisterNewUser(UserRegistrationContract contract)
+        {
+
+            DynamicParameters parameters = new DynamicParameters();
+            parameters.Add("@email", contract.Email);
+            parameters.Add("@password", contract.Password);
+
+            return repository.ExecuteStoredProcedureQuery<int>(DomainStoredProcedures.RegisterNewUser, parameters).First();
         }
 
         private int RegisterNewAddress(Address address)

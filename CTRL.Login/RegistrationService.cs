@@ -24,7 +24,7 @@ namespace CTRL.Login
         public void RegisterNewUser(UserRegistrationContract contract)
         {
             contract.Password = passwordEncryption.EncryptPassword(contract.Password);
-            registrationRepository.RegisterNewUser(contract);
+            registrationRepository.RegisterUserAndContact(contract);
         }
     }
 }
