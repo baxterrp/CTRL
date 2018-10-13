@@ -8,6 +8,7 @@ namespace CTRL.Web.App_Start
     using System.Web;
     using CTRL.Core.Database;
     using CTRL.Core.Interfaces;
+    using CTRL.Domain.Classes;
     using CTRL.Domain.Interfaces;
     using CTRL.Domain.Repositories;
     using CTRL.Login;
@@ -78,6 +79,8 @@ namespace CTRL.Web.App_Start
             kernel.Bind<ILoginService>().To<LoginService>().InSingletonScope();
             kernel.Bind<IDatabaseConnection>().To<DatabaseConnection>().InSingletonScope().WithConstructorArgument("connectionString", connectionString);
             kernel.Bind<IRepository>().To<Repository>().InSingletonScope();
+            kernel.Bind<ISetupsConfiguration>().To<SetupsConfiguration>().InSingletonScope();
+            kernel.Bind<ISetupsRepository>().To<SetupsRepository>().InSingletonScope();
             kernel.Bind<ILoginRepository>().To<LoginRepository>().InSingletonScope();
             kernel.Bind<IAuthorizationRepository>().To<AuthorizationRepository>().InSingletonScope();
             kernel.Bind<IAuthorizationService>().To<AuthorizationService>().InSingletonScope();

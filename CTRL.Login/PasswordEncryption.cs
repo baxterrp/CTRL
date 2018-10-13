@@ -1,20 +1,27 @@
-﻿using CTRL.Login.Interfaces;
+﻿using CTRL.Domain.Interfaces;
+using CTRL.Login.Interfaces;
 using DevOne.Security.Cryptography.BCrypt;
 
 namespace CTRL.Login
 {
     public class PasswordEncryption : IPasswordEncryption
     {
-        private const string Salt = "2n*5vu^w0~o3**z";
+
+        ISetupsConfiguration setupsConfiguration;
+
+        public PasswordEncryption(ISetupsConfiguration setupsConfiguration)
+        {
+            this.setupsConfiguration = setupsConfiguration;
+        }
 
         public bool CheckPassword(string userEnteredPassword, string databasePassword)
         {
-            return BCryptHelper.CheckPassword(userEnteredPassword + Salt, databasePassword);
+            return BCryptHelper.CheckPassword(userEnteredPassword + setupsConfiguration.PasswordSalt, databasePassword);
         }
 
         public string EncryptPassword(string userEnteredPassword)
         {
-            userEnteredPassword += Salt;
+            userEnteredPassword += setupsConfiguration.PasswordSalt;
             string hash = BCryptHelper.GenerateSalt();
             return BCryptHelper.HashPassword(userEnteredPassword, hash);
         }
