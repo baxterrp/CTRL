@@ -16,11 +16,6 @@ namespace CTRL.Domain.Classes
 
         public IEnumerable<Permission> Permissions { get; set; }
 
-        public bool IsActive {
-            get
-            {
-                return UserIdentifier > 0;
-            }
-        }
+        public bool IsActive { get; set; }
     }
 }
