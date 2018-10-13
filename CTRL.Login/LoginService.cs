@@ -1,5 +1,6 @@
 ﻿using CTRL.Domain.Classes;
 using CTRL.Domain.Classes.Contracts;
+using CTRL.Domain.Enumerations;
 using CTRL.Domain.Interfaces;
 using CTRL.Login.Enumerations;
 using CTRL.Login.Interfaces;
@@ -23,30 +24,22 @@ namespace CTRL.Login
         public UserProfile GetUser(LoginContract contract)
         {
             var user = loginRepository.GetUser(contract);
-            if(passwordEncryption.CheckPassword(contract.Password, user.Password))
+            if (!LoginStatus.UserNotFound.Equals(user.LoginStatus))
             {
-                if (user.IsActive)
+                if (!string.IsNullOrEmpty(user.Password) && passwordEncryption.CheckPassword(contract.Password, user.Password))
                 {
-                    user.Permissions = authorizationService.GetUserPermissions(user);
+                    if (user.IsActive)
+                    {
+                        user.Permissions = authorizationService.GetUserPermissions(user);
+                    }
                 }
-            }
-            else
-            {
-                return ResetUser();
+                else
+                {
+                    user.LoginStatus = LoginStatus.InvalidPassword;
+                }
             }
 
             return user;
-        }
-
-        private UserProfile ResetUser()
-        {
-            return new UserProfile()
-            {
-                LoginName = "Login Failed",
-                Password = string.Empty,
-                UserIdentifier = (int)decimal.Zero,
-                Permissions = new List<Permission>()
-            };
         }
     }
 }

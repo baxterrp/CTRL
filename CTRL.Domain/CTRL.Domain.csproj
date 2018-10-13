@@ -44,6 +44,7 @@
     <Compile Include="Classes\Contracts\LoginContract.cs" />
     <Compile Include="Classes\Contracts\UserRegistrationContract.cs" />
     <Compile Include="Enumerations\BusinessEntity.cs" />
+    <Compile Include="Enumerations\LoginStatus.cs" />
     <Compile Include="Enumerations\Permission.cs" />
     <Compile Include="Classes\UserProfile.cs" />
     <Compile Include="Constants\DomainStoredProcedures.cs" />
