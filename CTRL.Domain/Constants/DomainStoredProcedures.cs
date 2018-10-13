@@ -13,5 +13,7 @@
         public const string RegisterNewBusiness = "RegisterNewBusiness";
 
         public const string RegisterNewContact = "register_new_contact";
+
+        public const string GetPasswordSalt = "get_password_salt";
     }
 }
