@@ -1,10 +1,13 @@
-﻿using CTRL.Login.Enumerations;
+﻿using CTRL.Domain.Enumerations;
+using CTRL.Login.Enumerations;
 using System.Collections.Generic;
 
 namespace CTRL.Domain.Classes
 {
     public class UserProfile
     {
+        public LoginStatus LoginStatus { get; set; }
+
         public int UserIdentifier { get; set; }
 
         public string LoginName { get; set; }
