@@ -14,7 +14,7 @@ namespace CTRL_Core.Web
     {
         public static void Main(string[] args)
         {
-            new WebHostBuilder().UseKestrel().UseUrls("http://*:3000").UseContentRoot(Directory.GetCurrentDirectory()).UseStartup<Startup>().Build().Run();
+            new WebHostBuilder().UseKestrel().UseUrls("http://*:80").UseContentRoot(Directory.GetCurrentDirectory()).UseStartup<Startup>().Build().Run();
             //CreateWebHostBuilder(args).Build().Run();
         }
 
