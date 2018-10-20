@@ -19,6 +19,6 @@ namespace CTRL_Core.Web
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>().UseUrls("http://localhost:3000");
+                .UseStartup<Startup>().UseUrls("http://*:3000");
     }
 }
