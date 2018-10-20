@@ -262,17 +262,17 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CTRL.Core\CTRL.Core.csproj">
+    <ProjectReference Include="..\CTRL.Core\CTRL.Core.Deprecated.csproj">
       <Project>{0D7C0DB3-792D-474E-8794-3D2556639F3A}</Project>
-      <Name>CTRL.Core</Name>
+      <Name>CTRL.Core.Deprecated</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CTRL.Domain\CTRL.Domain.csproj">
+    <ProjectReference Include="..\CTRL.Domain\CTRL.Domain.Deprecated.csproj">
       <Project>{980a289c-bb07-4b74-a5df-d87dbaf193c5}</Project>
-      <Name>CTRL.Domain</Name>
+      <Name>CTRL.Domain.Deprecated</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CTRL.Login\CTRL.UserServices.csproj">
+    <ProjectReference Include="..\CTRL.Login\CTRL.UserServices.Deprecated.csproj">
       <Project>{889B34CC-75CD-4D30-9365-FC4E96A7D886}</Project>
-      <Name>CTRL.UserServices</Name>
+      <Name>CTRL.UserServices.Deprecated</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

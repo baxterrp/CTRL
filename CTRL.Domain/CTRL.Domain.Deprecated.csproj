@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{889B34CC-75CD-4D30-9365-FC4E96A7D886}</ProjectGuid>
+    <ProjectGuid>{980A289C-BB07-4B74-A5DF-D87DBAF193C5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CTRL.Login</RootNamespace>
-    <AssemblyName>CTRL.Login</AssemblyName>
+    <RootNamespace>CTRL.Domain</RootNamespace>
+    <AssemblyName>CTRL.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,29 +40,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthorizationService.cs" />
-    <Compile Include="Interfaces\IAuthorizationService.cs" />
-    <Compile Include="Interfaces\ILoginService.cs" />
-    <Compile Include="Interfaces\IPasswordEncryption.cs" />
-    <Compile Include="Interfaces\IRegistrationService.cs" />
-    <Compile Include="LoginService.cs" />
-    <Compile Include="PasswordEncryption.cs" />
+    <Compile Include="Classes\Contracts\BusinessEntityRegistrationContract.cs" />
+    <Compile Include="Classes\Contracts\LoginContract.cs" />
+    <Compile Include="Classes\Contracts\UserRegistrationContract.cs" />
+    <Compile Include="Classes\SetupsConfiguration.cs" />
+    <Compile Include="Enumerations\BusinessEntity.cs" />
+    <Compile Include="Enumerations\LoginStatus.cs" />
+    <Compile Include="Enumerations\Permission.cs" />
+    <Compile Include="Classes\UserProfile.cs" />
+    <Compile Include="Constants\DomainStoredProcedures.cs" />
+    <Compile Include="Interfaces\IAuthorizationRepository.cs" />
+    <Compile Include="Interfaces\ILoginRepository.cs" />
+    <Compile Include="Interfaces\IRegistrationRepository.cs" />
+    <Compile Include="Interfaces\ISetupsConfiguration.cs" />
+    <Compile Include="Interfaces\ISetupsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegistrationService.cs" />
+    <Compile Include="Repositories\AuthorizationRepository.cs" />
+    <Compile Include="Repositories\LoginRepository.cs" />
+    <Compile Include="Repositories\RegistrationRepository.cs" />
+    <Compile Include="Repositories\SetupsRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="BCrypt">
-      <Version>1.0.0</Version>
-    </PackageReference>
+    <ProjectReference Include="..\CTRL.Core\CTRL.Core.Deprecated.csproj">
+      <Project>{0d7c0db3-792d-474e-8794-3d2556639f3a}</Project>
+      <Name>CTRL.Core.Deprecated</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Ninject.MVC4">
       <Version>3.2.1</Version>
     </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CTRL.Domain\CTRL.Domain.csproj">
-      <Project>{980A289C-BB07-4B74-A5DF-D87DBAF193C5}</Project>
-      <Name>CTRL.Domain</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
