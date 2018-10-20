@@ -61,12 +61,6 @@
     <Compile Include="Repositories\SetupsRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CTRL.Core\CTRL.Core.Deprecated.csproj">
-      <Project>{0d7c0db3-792d-474e-8794-3d2556639f3a}</Project>
-      <Name>CTRL.Core.Deprecated</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Ninject.MVC4">
       <Version>3.2.1</Version>
     </PackageReference>

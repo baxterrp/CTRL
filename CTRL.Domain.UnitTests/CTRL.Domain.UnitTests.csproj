@@ -51,10 +51,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CTRL.Domain\CTRL.Domain.Deprecated.csproj">
-      <Project>{980A289C-BB07-4B74-A5DF-D87DBAF193C5}</Project>
-      <Name>CTRL.Domain.Deprecated</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CTRL.Login\CTRL.UserServices.Deprecated.csproj">
       <Project>{889B34CC-75CD-4D30-9365-FC4E96A7D886}</Project>
       <Name>CTRL.UserServices.Deprecated</Name>

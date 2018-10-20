@@ -58,11 +58,5 @@
       <Version>3.2.1</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CTRL.Domain\CTRL.Domain.Deprecated.csproj">
-      <Project>{980A289C-BB07-4B74-A5DF-D87DBAF193C5}</Project>
-      <Name>CTRL.Domain.Deprecated</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

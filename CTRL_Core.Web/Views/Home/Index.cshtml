@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+CTRL Test Login
+
+<form id="login-form">
+    <label>Email:</label>
+    <input type="text" id="email" />
+    <label>Password</label>
+    <input type="text" id="password" />
+    <button id="submit">Submit</button>
+</form>
+<div id="response"></div>
+<script>
+    $("#submit").on("click", function (event) {
+        event.preventDefault();
+
+        var email = $("#email").val();
+        var pass = $("#password").val();
+
+        if (email != "" && pass != "") {
+            $.ajax({
+                url: '@Url.Action("TestLogin", "Home")',
+                data: {
+                    UserName: email,
+                    Password: pass
+                },
+                type: "POST",
+                error: function (error) {
+                    console.log(error);
+                },
+                success: function (data) {
+                    $("#response").html(data);
+                }
+           });
+        } else {
+            $("#response").html("fill out both email and pass");
+        }
+    });
+
+</script>
