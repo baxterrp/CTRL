@@ -1,7 +1,7 @@
 ﻿using CTRL_Core.Domain.Classes;
 using CTRL_Core.Domain.Classes.Contracts;
 
-namespace CTRL_Core.Login.Interfaces
+namespace CTRL_Core.UserServices.Interfaces
 {
     public interface ILoginService
     {

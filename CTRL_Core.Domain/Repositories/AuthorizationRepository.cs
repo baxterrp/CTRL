@@ -1,8 +1,8 @@
 ﻿using CTRL_Core.Backbone.Interfaces;
 using CTRL_Core.Domain.Classes;
 using CTRL_Core.Domain.Constants;
+using CTRL_Core.Domain.Enumerations;
 using CTRL_Core.Domain.Interfaces;
-using CTRL_Core.Login.Enumerations;
 using Dapper;
 using System.Collections.Generic;
 

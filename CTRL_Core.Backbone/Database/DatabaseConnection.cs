@@ -1,6 +1,6 @@
 ﻿using CTRL_Core.Backbone.Interfaces;
 
-namespace CTRL_Core.BackboneDatabase
+namespace CTRL_Core.Backbone.Database
 {
     public class DatabaseConnection : IDatabaseConnection
     {

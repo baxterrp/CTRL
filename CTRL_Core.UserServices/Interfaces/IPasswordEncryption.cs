@@ -1,4 +1,4 @@
-﻿namespace CTRL_Core.Login.Interfaces
+﻿namespace CTRL_Core.UserServices.Interfaces
 {
     public interface IPasswordEncryption
     {

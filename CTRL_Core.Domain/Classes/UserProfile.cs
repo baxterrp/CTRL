@@ -1,5 +1,4 @@
 ﻿using CTRL_Core.Domain.Enumerations;
-using CTRL_Core.Login.Enumerations;
 using System.Collections.Generic;
 
 namespace CTRL_Core.Domain.Classes

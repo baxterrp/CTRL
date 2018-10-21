@@ -1,10 +1,10 @@
 ﻿using CTRL_Core.Domain.Classes;
+using CTRL_Core.Domain.Enumerations;
 using CTRL_Core.Domain.Interfaces;
-using CTRL_Core.Login.Enumerations;
-using CTRL_Core.Login.Interfaces;
+using CTRL_Core.UserServices.Interfaces;
 using System.Collections.Generic;
 
-namespace CTRL_Core.Login
+namespace CTRL_Core.UserServices
 {
     public class AuthorizationService : IAuthorizationService
     {

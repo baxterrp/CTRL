@@ -1,6 +1,6 @@
 ﻿using CTRL_Core.Domain.Classes.Contracts;
 using CTRL_Core.Domain.Enumerations;
-using CTRL_Core.Login.Interfaces;
+using CTRL_Core.UserServices.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CTRL_Core.Web.Controllers

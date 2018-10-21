@@ -2,9 +2,9 @@
 using CTRL_Core.Domain.Classes.Contracts;
 using CTRL_Core.Domain.Enumerations;
 using CTRL_Core.Domain.Interfaces;
-using CTRL_Core.Login.Interfaces;
+using CTRL_Core.UserServices.Interfaces;
 
-namespace CTRL_Core.Login
+namespace CTRL_Core.UserServices
 {
     public class LoginService : ILoginService
     {

@@ -1,8 +1,8 @@
 ﻿using CTRL_Core.Domain.Interfaces;
-using CTRL_Core.Login.Interfaces;
+using CTRL_Core.UserServices.Interfaces;
 using DevOne.Security.Cryptography.BCrypt;
 
-namespace CTRL_Core.Login
+namespace CTRL_Core.UserServices
 {
     public class PasswordEncryption : IPasswordEncryption
     {

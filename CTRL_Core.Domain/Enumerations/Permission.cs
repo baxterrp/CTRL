@@ -1,4 +1,4 @@
-﻿namespace CTRL_Core.Login.Enumerations
+﻿namespace CTRL_Core.Domain.Enumerations
 {
     public enum Permission
     {

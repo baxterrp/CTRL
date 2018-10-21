@@ -1,8 +1,8 @@
 ﻿using CTRL_Core.Domain.Classes;
-using CTRL_Core.Login.Enumerations;
+using CTRL_Core.Domain.Enumerations;
 using System.Collections.Generic;
 
-namespace CTRL_Core.Login.Interfaces
+namespace CTRL_Core.UserServices.Interfaces
 {
     public interface IAuthorizationService
     {
