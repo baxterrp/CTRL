@@ -2,15 +2,16 @@
     ViewBag.Title = "Home Page";
 }
 
-CTRL Test Login
+<img id="logo" src="~/images/ctrl_logo.png" alt="">
 
 <form id="login-form">
-    <label>Email:</label>
-    <input type="text" id="email" />
-    <label>Password</label>
-    <input type="text" id="password" />
-    <button id="submit">Submit</button>
+    <input type='email' placeholder='johndoe@domain.com' id='email'>
+    <input type='password' placeholder='********' id='password'>
+    <button type='submit' id='submit'>Login</button>
+    <button type="submit" id="register">Register</button>
 </form>
+<a href=''><p>Forgot password?</p></a>
+    
 <div id="response"></div>
 <script>
     $("#submit").on("click", function (event) {
