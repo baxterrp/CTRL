@@ -30,6 +30,7 @@ a:hover {
 
 #login-form {
     grid-column: 2 / 3;
+    grid-row: 1 / 2;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,3 +56,23 @@ button {
     button:focus, button:hover {
         background-color: #111;
     }
+
+#response {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    text-align: center;
+    height: 50px;
+    position: relative;
+    font-size: 18px;
+    width: 350px;
+}
+
+.login-message {
+    background-color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    color: #FFF;
+    box-shadow: 1px 1px 15px 2px #000;
+}

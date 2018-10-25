@@ -6,14 +6,13 @@
 
 <main id="main-login">
     <form id="login-form">
+        <div id="response"></div>
         <input type='email' placeholder='email' id='email'>
         <input type='password' placeholder='password' id='password'>
         <button type='submit' id='submit'>Login</button>
         <button type="submit" id="register">Register</button>
         <a href=''><p>Forgot password?</p></a>
     </form>
-       
-    <div id="response"></div>
 </main>
 <script>
     $("#submit").on("click", function (event) {
@@ -35,10 +34,12 @@
                 },
                 success: function (data) {
                     $("#response").html(data);
+                    $("#response").attr("class", "login-message");
                 }
            });
         } else {
-            $("#response").html("fill out both email and pass");
+            $("#response").html("Fill out both email and password");
+            $("#response").attr("class", "login-message");
         }
     });
 
