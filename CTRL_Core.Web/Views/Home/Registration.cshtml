@@ -3,6 +3,11 @@
     ViewBag.Title = "TestLogin";
 }
 
+@using CTRL_Core.Backbone.Enums
+@using CTRL_Core.Domain.Enumerations
+
+@model CTRL_Core.Web.Models.TestModel
+
 <h2>TestLogin</h2>
 <form id="login-form">
     <label>Company Name:</label>
@@ -14,7 +19,7 @@
     <label>City:</label>
     <input type="text" id="city" />
     <label>State</label>
-    <input type="text" id="state" />   
+    @Html.DropDownList("state", Html.GetEnumSelectList<State>(), "Select a State")
     <label>Zip</label>
     <input type="text" id="zip" />
     <label>Phone</label>
@@ -23,8 +28,8 @@
     <input type="text" id="firstName" />
     <label>Contact Last Name</label>
     <input type="text" id="lastName" />
-    <label>Business Type 2 - vendor : 1 - buyer</label>
-    <input type="text" id="entity" />
+    <label>Business Type</label>
+    @Html.DropDownList("entity", Html.GetEnumSelectList<BusinessEntity>(), "Select a Business Type")
     <label>email</label>
     <input type="text" id="email" />
     <label>password</label>
