@@ -3,76 +3,38 @@
     ViewBag.Title = "TestLogin";
 }
 
-<h2>TestLogin</h2>
-<form id="login-form">
-    <input type="text" id="company-name" placeholder="Company Name" />
-    <input type="text" id="firstName" placeholder="First Name" />
-    <input type="text" id="lastName" placeholder="Last Name" />
-    <input type="email" id="email" placeholder="Email" />
-    <input type="text" id="address-line-1" placeholder="Address" />
-    <input type="text" id="address-line-2" placeholder="Address 2" />
-    <input type="text" id="city" placeholder="City" />
-    <select>
-        <option value="Alabama">Alabama</option>
-        <option value="Alaska">Alaska</option>
-        <option value="Arizona">Arizona</option>
-        <option value="Arkansas">Arkansas</option>
-        <option value="California">California</option>
-        <option value="Colorado">Colorado</option>
-        <option value="Connecticut">Connecticut</option>
-        <option value="Delaware">Delaware</option>
-        <option value="Florida">Florida</option>
-        <option value="Georgia">Georgia</option>
-        <option value="Hawaii">Hawaii</option>
-        <option value="Idaho">Idaho</option>
-        <option value="Illinois">Illinois</option>
-        <option value="Indiana">Indiana</option>
-        <option value="Iowa">Iowa</option>
-        <option value="Kansas">Kansas</option>
-        <option value="Kentucky">Kentucky</option>
-        <option value="Louisiana">Louisiana</option>
-        <option value="Maine">Maine</option>
-        <option value="Maryland">Maryland</option>
-        <option value="Massachussettes">Massachussettes</option>
-        <option value="Michigan">Michigan</option>
-        <option value="Minnesota">Minnesota</option>
-        <option value="Mississippi">Mississippi</option>
-        <option value="Missouri">Missouri</option>
-        <option value="Montana">Montana</option>
-        <option value="Nebraska">Nebraska</option>
-        <option value="Nevada">Nevada</option>
-        <option value="New Hampshire">New Hampshire</option>
-        <option value="New Jersey">New Jersey</option>
-        <option value="New Mexico">New Mexico</option>
-        <option value="New York">New York</option>
-        <option value="North Carolina">North Carolina</option>
-        <option value="North Dakota">North Dakota</option>
-        <option value="Ohio">Ohio</option>
-        <option value="Oklahoma">Oklahoma</option>
-        <option value="Oregon">Oregon</option>
-        <option value="Pennsylvania">Pennsylvania</option>
-        <option value="Rhode Island">Rhode Island</option>
-        <option value="South Carolina">South Carolina</option>
-        <option value="South Dakota">South Dakota</option>
-        <option value="Tennessee">Tennessee</option>
-        <option value="Texas">Texas</option>
-        <option value="Utah">Utah</option>
-        <option value="Vermont">Vermont</option>
-        <option value="Virginia">Virginia</option>
-        <option value="Washington">Washington</option>
-        <option value="West Virginia">West Virginia</option>
-        <option value="Wisconsin">Wisconsin</option>
-        <option value="Wyoming">Wyoming</option>
-    </select>
-    <input type="text" id="state" placeholder="State" />
-    <input type="number" id="zip" placeholder="Zip Code" />
-    <input type="number" id="phone" placeholder="Phone Number" />
-    <input type="password" id="password" placeholder="Password" />
-    <input type="text" id="confirmPassword" placeholder="Confirm Password" />
-    Vendor: <input type="radio" name="businessType" id="entityVendor" value="Vendor" checked />
-    Buyer: <input type="radio" name="businessType" id="entityBuyer" value="Buyer" />    
-    <button id="submit">Submit</button>
-</form>
+<img class="logo" src="~/images/ctrl_logo.png" alt="">
+
+<main id="main-register">
+    <h2>Register</h2>
+    <form id="register-form">
+        <input type="text" id="company-name" placeholder="Company Name" />
+        <input type="text" id="firstName" placeholder="First Name" />
+        <input type="text" id="lastName" placeholder="Last Name" />
+        <input type="email" id="email" placeholder="Email" />
+        <input type="text" id="address-line-1" placeholder="Address" />
+        <input type="text" id="address-line-2" placeholder="Address 2" />
+        <input type="text" id="city" placeholder="City" />
+        <div id="location">
+            <input type="text" id="zip" placeholder="Zip Code" />
+            <select id="'state"></select>
+        </div>
+        <input type="text" id="phone" placeholder="Phone Number" />
+        <input type="password" id="password" placeholder="Password" />
+        <input type="text" id="confirmPassword" placeholder="Confirm Password" />
+        <div id="entity-radio">
+            <label for="entityVendor">
+                Vendor
+                <input type="radio" name="entity" id="entityVendor" value="2" checked />
+            </label>
+            <label for="entityBuyer">
+                Buyer
+                <input type="radio" name="entity" id="entityBuyer" value="1" />
+            </label>
+        </div>
+        <button id="submit">Submit</button>
+    </form>
+</main>
 <div id="response"></div>
 <script>
     $("#submit").on("click", function (event) {
@@ -86,7 +48,7 @@
         var city = $("#city").val();
         var state = $("#state").val();
         var zip = $("#zip").val();
-        var entity = $("#entity").val();
+        var entity = $("input[name='entity']:checked").val();
         var password = $("#password").val();
         var phone = $("#phone").val();
         var firstName = $("#firstName").val();
