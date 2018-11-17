@@ -1,10 +1,10 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "TestLogin";
 }
+@using CTRL_Core.Backbone.Enums
+@using CTRL_Core.Domain.Enumerations
 
 <img class="logo" src="~/images/ctrl_logo.png" alt="">
-
 <main id="main-register">
     <h2>Register</h2>
     <form id="register-form">
@@ -17,20 +17,14 @@
         <input type="text" id="city" placeholder="City" />
         <div id="location">
             <input type="text" id="zip" placeholder="Zip Code" />
-            <select id="'state"></select>
+            @Html.DropDownList("state", Html.GetEnumSelectList<State>(), "Select a State")
         </div>
         <input type="text" id="phone" placeholder="Phone Number" />
         <input type="password" id="password" placeholder="Password" />
         <input type="text" id="confirmPassword" placeholder="Confirm Password" />
         <div id="entity-radio">
-            <label for="entityVendor">
-                Vendor
-                <input type="radio" name="entity" id="entityVendor" value="2" checked />
-            </label>
-            <label for="entityBuyer">
-                Buyer
-                <input type="radio" name="entity" id="entityBuyer" value="1" />
-            </label>
+            <label>Business Type</label>
+            @Html.DropDownList("entity", Html.GetEnumSelectList<BusinessEntity>(), "Select a Business Type")
         </div>
         <button id="submit">Submit</button>
     </form>
@@ -48,7 +42,7 @@
         var city = $("#city").val();
         var state = $("#state").val();
         var zip = $("#zip").val();
-        var entity = $("input[name='entity']:checked").val();
+        var entity = $("#entity").val();
         var password = $("#password").val();
         var phone = $("#phone").val();
         var firstName = $("#firstName").val();
